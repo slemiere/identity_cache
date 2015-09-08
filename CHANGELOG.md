@@ -1,5 +1,22 @@
 # IdentityCache changelog
 
+#### 0.2.6 (unreleased)
+
+- Raise when trying to cache a through association. Previously it wouldn't be invalidated properly.
+- Raise if a class method is called on a scope.  Previously the scope was ignored.
+- Raise if a class method is called on a subclass of one that included IdentityCache. This never worked properly.
+- Fix cache_belongs_to on polymorphic assocations.
+
+#### 0.2.5
+
+- Fixed support for namespaced model classes
+- Added some deduplication for parent cache expiry
+- Fixed some deprecation warnings in rails 4.2
+
+#### 0.2.4
+
+- Refactoring, documentation and test changes
+
 #### 0.2.3
 
 - PostgreSQL support
