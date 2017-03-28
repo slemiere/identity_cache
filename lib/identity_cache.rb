@@ -65,6 +65,11 @@ module IdentityCache
     mattr_accessor :fetch_read_only_records
     self.fetch_read_only_records = true
 
+    # Raise an exception if the record returned from the cache don't match the id
+    # the user expected
+    mattr_accessor :raise_on_id_mismatch
+    self.raise_on_id_mismatch = false
+
     def included(base) #:nodoc:
       raise AlreadyIncludedError if base.respond_to?(:cached_model)
       base.class_attribute :cached_model
